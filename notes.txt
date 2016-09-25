@@ -1,0 +1,7 @@
+What can Electron do?
+    offers access to the native operating system
+    offline by default
+        support for this is much more natural than on the web
+    node and node native modules
+    no cross browser concerns
+    

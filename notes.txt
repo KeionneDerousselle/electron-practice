@@ -4,4 +4,26 @@ What can Electron do?
         support for this is much more natural than on the web
     node and node native modules
     no cross browser concerns
-    
+
+How it works
+    Electron consists of multiple processes
+    There are two types:
+        Main
+        Renderer
+    There is only one main process and it acts as the main controller of the app
+        it manages the application lifecycle and is headless (no UI) 
+        it is in charge of spawning new render processes
+    There can be multiple render processes
+        Each render process is usually represented in the app by a UI Window
+        this is the part of electron app that users will see and interact with
+        render processes, while usually visual, can be used to create other processes for concurrent work
+    Each processe type (Renderer and Main) has it's own API
+    There are different modules provided in electron that are available or unavailable depending on what kind of process your code is running in
+    There is a mechanism for those processes to coordinate and communicate with each other known as IPC (Inter-Process Communication)
+    Both Main and Renderer Processes get their own IPC module
+    Each IPC module is an instance of Node's event emitter, thus the APIs for this IPC modules feel like most other Pub_Sub APIs
+    IPC lifecycle  
+        renderer sends ipc.send('some event');
+        main process is listening for ipc.on('some event') and performs some function as a result
+        main process fires render.webContents.send('processing')
+        renderer process listens to ipc.on('processing') and performs some function as a result

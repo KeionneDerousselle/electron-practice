@@ -3,7 +3,13 @@
         <link rel="stylesheet" href="countdown.css"/>
     </head>
     <body>
-        <h1>Hello, World! From Electron</h1>
+
+        <div class="container">
+            <h1 class="title">Countdown</h1>
+            <div class="current-count" id="count"></div>
+            <button class="btn" id="startCountdownBtn">Start!</button>
+        </div>
+
         <script>require('./renderer')</script>
     </body>
 </html>

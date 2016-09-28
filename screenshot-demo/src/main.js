@@ -5,11 +5,11 @@ let mainWindow;
 app.on('ready', () => {
 
     mainWindow = new BrowserWindow({
-        height: 900,
-        width:900,
+        height: 0,
+        width: 0,
         resizable: false,
         frame: false,
-        //show: false
+        show: false
     });
 
     mainWindow.loadURL(`file://${__dirname}/capture.html`);

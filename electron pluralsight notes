@@ -1,0 +1,16 @@
+Why Electron?
+
+easy and simple to build web apps
+can combine the ease and simplicity of web UI with access to
+	- file system
+	- task bar
+	- dock icons
+	- recent docs
+	- media previews
+	- different windows and window title bars
+	- native notifications
+	- power management
+	- network connectivity detection
+	- global shortcuts
+	- native menus
+	

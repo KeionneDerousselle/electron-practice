@@ -4,6 +4,9 @@ What can Electron do?
         support for this is much more natural than on the web
     node and node native modules
     no cross browser concerns
+    access to host machine binaries
+    GUI for testing
+    
 
 How it works
     Electron consists of multiple processes
@@ -27,6 +30,7 @@ How it works
         main process is listening for ipc.on('some event') and performs some function as a result
         main process fires render.webContents.send('processing')
         renderer process listens to ipc.on('processing') and performs some function as a result
+    
 
 
 Talk about

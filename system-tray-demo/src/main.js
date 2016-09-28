@@ -5,7 +5,7 @@ let mainWindow;
 
 app.on('ready', () => {
 
-    const tray = new Tray(path.join('src', 'electron.png'));
+    const tray = new Tray(`${__dirname}\\..\\..\\electron.png`);
    
     mainWindow = new BrowserWindow();
     mainWindow.loadURL(`file://${__dirname}/index.html`);

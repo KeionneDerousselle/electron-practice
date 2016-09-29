@@ -49,4 +49,5 @@ Talk about
         web
         mac
         windows
-    
+    feature insurance?
+        don't have to worry about whether or not some features will work for clients using differnt browsers

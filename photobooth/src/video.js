@@ -16,7 +16,7 @@ function handleSuccess(videoEl, stream)
 }
 
 function handleError(error){
-    console.log('Camer error: ', error);
+    console.log('Camera error: ', error);
 }
 
 exports.init = (nav, videoEl) => {
@@ -27,4 +27,9 @@ exports.init = (nav, videoEl) => {
 exports.captureBytes = (videoEl, canvasContext, canvasEl) => {
     canvasContext.drawImage(videoEl, 0, 0);
     return canvasEl.toDataURL('image/png');
+};
+
+
+exports.captureBytesFromLiveCanvas = (videoEl) => {
+    return videoEl.toDataURL('image/png');
 };

@@ -20,6 +20,6 @@ function handleError(error){
 }
 
 exports.init = (nav, videoEl) => {
-    nav.getUserMedia = navigator.webkitGetUserMedia
+    nav.getUserMedia = nav.webkitGetUserMedia
     nav.getUserMedia(constraints, stream => handleSuccess(videoEl, stream), error => handleError(error));
 };

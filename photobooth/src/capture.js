@@ -1,5 +1,5 @@
 
-const video = require('./video');
+const video = require('../vendor/video');
 
 window.addEventListener('DOMContentLoaded', () => {
     const videoEl = document.getElementById('video');

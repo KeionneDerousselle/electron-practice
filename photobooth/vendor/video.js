@@ -23,3 +23,8 @@ exports.init = (nav, videoEl) => {
     nav.getUserMedia = nav.webkitGetUserMedia
     nav.getUserMedia(constraints, stream => handleSuccess(videoEl, stream), error => handleError(error));
 };
+
+exports.captureBytes = (videoEl, canvasContext, canvasEl) => {
+    canvasContext.drawImage(videoEl, 0, 0);
+    return canvasEl.toDataURL('image/png');
+};

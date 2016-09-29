@@ -1,5 +1,6 @@
 
-const video = require('../vendor/video');
+const countdown = require('./countdown');
+const video = require('./video');
 
 function formatImgTag(doc, bytes){
     const div = doc.createElement('div');
@@ -14,7 +15,7 @@ function formatImgTag(doc, bytes){
 
     div.appendChild(img);
     div.appendChild(close);
-    
+
     return div;
 }
 
@@ -30,7 +31,9 @@ window.addEventListener('DOMContentLoaded', () => {
     video.init(navigator, videoEl);
 
     recordEl.addEventListener('click', () => {
-        const bytes = video.captureBytes(videoEl, canvasContext, canvasEl)
-        photosEl.appendChild(formatImgTag(document, bytes));
+        countdown.start(counterEl, 3, () => {
+            const bytes = video.captureBytes(videoEl, canvasContext, canvasEl)
+            photosEl.appendChild(formatImgTag(document, bytes));
+        });
     });
 });
